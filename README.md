@@ -1,10 +1,10 @@
 # cub3d_tester
 A simple tester for cub3d
 
-| ⚠️ WARNING: This tester is for Linux only ⚠️ |
+| ⚠️ This tester is for Linux only ⚠️ |
 | --- |
 
-| ⚠️ WARNING: You should add or update map files to accommodate how you handle spaces for the map! ⚠️ |
+| ⚠️ You should add or update map files to accommodate how you handle spaces for the map! ⚠️ |
 | --- |
 
 
