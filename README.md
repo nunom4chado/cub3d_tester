@@ -23,4 +23,4 @@ During testing, a window will open for each map (for invalid maps this *may* not
 ## Things to take away
 - This tester may not cover all tests!
 - Trust no one. It is your responsibility to make sure everything works correctly.
-- Explore the script and try to adapt it to other things. Testing is a valuable skill! Do not miss on the opportunity to learn it!
+- Explore the script and try to adapt it to other things. Testing is a highly valuable skill that should not be overlooked! Seize the opportunity to learn it!
