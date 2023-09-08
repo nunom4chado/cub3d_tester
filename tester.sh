@@ -140,7 +140,7 @@ printf ${BLUE}"\n-------------------------------------------------------------\n
 
 for arg in "${invalid_args[@]}"
 do
-	N=$(./cub3d $arg | wc -l)
+	N=$(./cub3d $arg | grep -x "Error" | wc -l)
 	if [ $N -eq 0 ]; then
 		printf "${RED}[KO]${DEF_COLOR}";
 	else
@@ -165,7 +165,7 @@ do
 		printf ${RED}"File missing: ${map}.\n";
 		exit 1;
 	fi
-	N=$(./cub3d $map | wc -l)
+	N=$(./cub3d $map | grep -x "Error" | wc -l)
 	if [ $N -eq 0 ]; then
 		printf "${RED}[KO]${DEF_COLOR}";
 	else
@@ -190,7 +190,7 @@ do
 		printf ${RED}"File missing: ${map}.\n";
 		exit 1;
 	fi
-	N=$(./cub3d $map | wc -l)
+	N=$(./cub3d $map | grep -x "Error" | wc -l)
 	if [ $N -eq 0 ]; then
 		printf "${GREEN}[OK]${DEF_COLOR}";
 	else
