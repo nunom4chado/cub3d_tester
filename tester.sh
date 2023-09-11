@@ -21,6 +21,8 @@ textures=(
 	"./textures/east.xpm"
 	"./textures/west.xpm"
 	"./textures/x"
+	"./textures/north_oversize.xpm"
+	"./textures/west_undersize.xpm"
 )
 
 invalid_args=(
@@ -113,6 +115,7 @@ invalid_maps=(
 	"./maps/invalid/triangle_open.cub"
 	"./maps/invalid/triangle_multi_open.cub"
 	"./maps/invalid/broken_xpm.cub"
+	"./maps/valid/xpm_wrong_size.cub"
 )
 
 # ---------------------------------------------------------------------------- #
@@ -146,7 +149,7 @@ do
 	else
 		printf "${GREEN}[OK]${DEF_COLOR}";
 	fi
-	R=$(valgrind --log-fd=1 ./cub3d $arg | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+	R=$(valgrind --leak-check=full --show-leak-kinds=all --log-fd=1 ./cub3d $arg | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
 	if [[ $R == 2 ]]; then
 		printf "${GREEN}[MOK]${DEF_COLOR}";
 	else
@@ -171,7 +174,7 @@ do
 	else
 		printf "${GREEN}[OK]${DEF_COLOR}";
 	fi
-	R=$(valgrind --log-fd=1 ./cub3d $map | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+	R=$(valgrind --leak-check=full --show-leak-kinds=all --log-fd=1 ./cub3d $map | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
 	if [[ $R == 2 ]]; then
 		printf "${GREEN}[MOK]${DEF_COLOR}";
 	else
@@ -196,7 +199,7 @@ do
 	else
 		printf "${RED}[KO]${DEF_COLOR}";
 	fi
-	R=$(valgrind --log-fd=1 ./cub3d $map | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
+	R=$(valgrind --leak-check=full --show-leak-kinds=all --log-fd=1 ./cub3d $map | grep -Ec 'no leaks are possible|ERROR SUMMARY: 0')
 	if [[ $R == 2 ]]; then
 		printf "${GREEN}[MOK]${DEF_COLOR}";
 	else
